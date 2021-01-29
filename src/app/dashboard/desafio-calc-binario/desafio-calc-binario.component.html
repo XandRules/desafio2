@@ -1,0 +1,44 @@
+<mat-card>
+</mat-card>
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title>
+       Operação Binária
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="dashboard-card-content">
+    <div class="card-content">
+      <form (ngSubmit)="calcular()">
+        <div class="form-horizontal" [formGroup]="calculoForm">
+          <div class="form-group">
+            <div class="row">
+              <mat-form-field class="mat-form">
+                <mat-label>Primeiro numero Binário</mat-label>
+                <input matInput placeholder="EX: 11110010" type="number" name="binario1" id="binario1" formControlName="binario1" required >
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="mat-form">
+                <mat-label>Operador</mat-label>
+                <input matInput placeholder="EX: + - * /" type="text" name="operator" id="operator" formControlName="operator" required >
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="mat-form">
+                <mat-label>Segundo numero Binário</mat-label>
+                <input matInput placeholder="EX: 11011100" type="number" name="binario2" id="binario2" formControlName="binario2" required >
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <button type="submit" mat-raised-button color="primary" [disabled]="!calculoForm.valid" >Calcular</button>
+              <h3 *ngIf="result" style="margin-top: 20px;">Resultado: {{result}}</h3>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
