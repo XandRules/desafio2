@@ -2,7 +2,7 @@ import { DashboardService } from './../dashboard-service/dashboard.service';
 
 import { Binario } from './../../binario';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -38,8 +38,6 @@ export class DesafioCalcBinarioComponent implements OnInit {
       if(this.validateInputs()){
 
         this.result = this.dashboardService.doOperation(this.binario.binario1,this.binario.binario2, this.binario.operator);
-
-
         this.toastrService.success('Calculado com Sucesso', `O Calculo foi realizado ${this.result}`,{
           progressBar: true,
           progressAnimation: 'increasing',
@@ -61,9 +59,18 @@ export class DesafioCalcBinarioComponent implements OnInit {
   }
 
   validateInputs(): boolean{
+
+    if(this.dashboardService.toNumber(this.binario.binario1.toString()) < 0 && this.dashboardService.toNumber(this.binario.binario1.toString()) > 255){
+      return false;
+    }
+
     return Boolean(this.dashboardService.isBinary(this.binario.binario1.toString()) &&
     this.dashboardService.isBinary(this.binario.binario2.toString()) &&
     this.dashboardService.isValidOperator(this.binario.operator));
+  }
+
+  reset(){
+    this.calculoForm.reset();
   }
 
 }
