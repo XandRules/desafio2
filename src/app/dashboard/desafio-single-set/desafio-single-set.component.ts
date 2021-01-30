@@ -42,7 +42,7 @@ export class DesafioSingleSetComponent implements OnInit {
       if (!this.singleSet.has(this.set.numero1)) {
         this.singleSet.add(this.set.numero1);
 
-        this.toastrService.success('Valor add com sucesso', `O Número ${this.result} foi adicionado`,{
+        this.toastrService.success('Valor add com sucesso', `O Número ${this.set.numero1} foi adicionado`,{
           progressBar: true,
           progressAnimation: 'increasing',
           tapToDismiss: true,
