@@ -25,7 +25,7 @@ export class DesafioSingleSetComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = this.fb.group({
-      numero1: ['', [Validators.required]]
+      numero1: ['', [Validators.required, CustomValidators.min(-1000),CustomValidators.max(1000)]]
     });
   }
 
