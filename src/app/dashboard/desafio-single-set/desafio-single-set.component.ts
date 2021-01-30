@@ -31,6 +31,8 @@ export class DesafioSingleSetComponent implements OnInit {
   reset(){
     console.log('reset')
     this.addForm.reset();
+    this.singleSet.clear();
+    this.result = ''
   }
 
   public add() {
