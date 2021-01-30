@@ -2,6 +2,7 @@ import { ToastrService } from 'ngx-toastr';
 import { DashboardService } from './../dashboard-service/dashboard.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { CustomValidators } from 'ng2-validation';
 
 export class MySet{
   numero1: number
