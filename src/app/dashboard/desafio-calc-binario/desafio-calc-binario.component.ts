@@ -60,7 +60,12 @@ export class DesafioCalcBinarioComponent implements OnInit {
 
   validateInputs(): boolean{
 
-    if(this.dashboardService.toNumber(this.binario.binario1.toString()) < 0 && this.dashboardService.toNumber(this.binario.binario1.toString()) > 255){
+    let numero1 = this.dashboardService.toNumber(this.binario.binario1.toString())
+    let numero2 = this.dashboardService.toNumber(this.binario.binario2.toString())
+
+    console.log(numero1, numero2);
+
+    if(numero1 < 0 || numero1 > 255 || numero2 < 0 || numero2 > 255){
       return false;
     }
 
