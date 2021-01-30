@@ -71,7 +71,6 @@ export class DesafioCalcBinarioComponent implements OnInit {
 
   reset(){
     this.calculoForm.reset();
-    this.result = null;
   }
 
 }
